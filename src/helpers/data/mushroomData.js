@@ -183,25 +183,57 @@ const mushrooms = [
 
 const basket = [
   {
-    id: 'mushroom20',
+    id: '1',
     name: 'Wood Blewit',
     description: 'Native to Europe.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Lepista_nuda_LC0372.jpg/1280px-Lepista_nuda_LC0372.jpg',
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
-  }
+  },
+  {
+    id: '2',
+    name: 'Penny Bun',
+    description: 'Also known as porcini.',
+    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Boletus_edulis_EtgHollande_041031_091.jpg/1920px-Boletus_edulis_EtgHollande_041031_091.jpg',
+    isMagic: false,
+    isPoisonous: false,
+    isDeadly: false,
+  },
+  {
+    id: '3',
+    name: 'Golden Chantarelle',
+    description: 'Tries to look toxic, but is very edible.',
+    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Chanterelle_Cantharellus_cibarius.jpg',
+    isMagic: false,
+    isPoisonous: false,
+    isDeadly: false,
+  },
 ]
 
 const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
+const poisonEvent = () => {
+  if (basket.length >2) {
+    basket.splice(0,2);
+    console.log('picked poison');
+  } else if (basket.length <= 2) {
+    basket = [];
+  }
+};
+
 const pickAMushroom = () => {
   const randomNum = Math.floor(Math.random() * mushrooms.length);
   const pickedMushroom = mushrooms[randomNum];
   pickedMushroom.id = '' + basket.length++;
-  basket.push(pickedMushroom);
+  // basket.push(pickedMushroom);
+  if (pickedMushroom.isPoisonous) {
+    poisonEvent();
+  } else {
+    basket.push(pickedMushroom);
+  }
 };
 
 export default { getMushrooms, getBasket, pickAMushroom };
