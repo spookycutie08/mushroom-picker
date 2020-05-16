@@ -74,7 +74,7 @@ const mushrooms = [
   {
     id: 'mushroom9',
     name: 'Jew\'s Ear',
-    description: 'Mistranslated from \"Judas\' Ear\" in Latin.',
+    description: 'Mistranslated from "Judas\' Ear" in Latin.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Auricularia_auricula-judae_64485.JPG/1920px-Auricularia_auricula-judae_64485.JPG',
     isMagic: false,
     isPoisionous: false,
@@ -182,3 +182,9 @@ const mushrooms = [
 ]
 
 const basket = []
+
+const getMushrooms = () => mushrooms;
+
+const getBasket = () => basket;
+
+export default { getMushrooms };
