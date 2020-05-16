@@ -5,7 +5,7 @@ const mushrooms = [
     description: 'Psilocybe semilanceata. The psychedelic kind.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Psilocybe_semilanceata_6514.jpg',
     isMagic: true,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -14,7 +14,7 @@ const mushrooms = [
     description: 'The iconic toadstool.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/02/2006-10-25_Amanita_muscaria_crop.jpg',
     isMagic: false,
-    isPoisionous: true,
+    isPoisonous: true,
     isDeadly: false,
   },
   {
@@ -23,7 +23,7 @@ const mushrooms = [
     description: 'As bad as it sounds.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Amanita_phalloides_1.JPG',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: true,
   },
   {
@@ -32,7 +32,7 @@ const mushrooms = [
     description: 'People say (between bouts of vomiting) it has a bitter taste.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hypholoma_fasciculare_Queteraro.jpg/1920px-Hypholoma_fasciculare_Queteraro.jpg',
     isMagic: false,
-    isPoisionous: true,
+    isPoisonous: true,
     isDeadly: false,
   },
   {
@@ -41,7 +41,7 @@ const mushrooms = [
     description: 'AKA: The Vomiter',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Chlorophyllum_molybdites_Guadalajara.jpg/1920px-Chlorophyllum_molybdites_Guadalajara.jpg',
     isMagic: false,
-    isPoisionous: true,
+    isPoisonous: true,
     isDeadly: false,
   },
   {
@@ -50,7 +50,7 @@ const mushrooms = [
     description: 'Super boring, but tasty on pizza.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/01/ChampignonMushroom.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -59,7 +59,7 @@ const mushrooms = [
     description: 'Helps lower cholesterol.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/94/Oyster_mushoom_fells.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -68,7 +68,7 @@ const mushrooms = [
     description: 'Tastes better than it sounds.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Shiitakegrowing.jpg/1024px-Shiitakegrowing.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -77,7 +77,7 @@ const mushrooms = [
     description: 'Mistranslated from "Judas\' Ear" in Latin.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Auricularia_auricula-judae_64485.JPG/1920px-Auricularia_auricula-judae_64485.JPG',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -86,7 +86,7 @@ const mushrooms = [
     description: 'Grows on rice straw beds.',
     imgUrl: 'http://www.agrilearner.com/wp-content/uploads/2018/08/mushrooms-311.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -95,7 +95,7 @@ const mushrooms = [
     description: 'Actually, it\'s a parasitic yeast.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Tremella_fuciformis_337510.jpg/1920px-Tremella_fuciformis_337510.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -104,7 +104,7 @@ const mushrooms = [
     description: 'Native to East Asia.',
     imgUrl: 'https://c1.staticflickr.com/1/637/32398997561_afaea4b6a0_z.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -113,7 +113,7 @@ const mushrooms = [
     description: 'AKA: Velvet Foot',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Flammulina_velutipes.JPG',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -122,7 +122,7 @@ const mushrooms = [
     description: 'Guess what color it is...?',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2011-05-19_Stropharia_rugosoannulata_Farl._ex_Murrill_183478.jpg/1920px-2011-05-19_Stropharia_rugosoannulata_Farl._ex_Murrill_183478.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -131,7 +131,7 @@ const mushrooms = [
     description: 'Usually has a curvy foot.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Agrocybe_aegerita.jpg/1920px-Agrocybe_aegerita.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -140,7 +140,7 @@ const mushrooms = [
     description: 'No idea why it\'s called that...',
     imgUrl: 'https://www.healthbenefitstimes.com/9/gallery/lions-mane-mushroom/Lions-mane-mushroom.png',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -149,7 +149,7 @@ const mushrooms = [
     description: 'Also known as porcini.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Boletus_edulis_EtgHollande_041031_091.jpg/1920px-Boletus_edulis_EtgHollande_041031_091.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -158,7 +158,7 @@ const mushrooms = [
     description: 'Commonly found in the Rocky Mountains.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Calbovista_subsculpta_42758.jpg/1920px-Calbovista_subsculpta_42758.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -167,7 +167,7 @@ const mushrooms = [
     description: 'Tries to look toxic, but is very edible.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Chanterelle_Cantharellus_cibarius.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
   {
@@ -176,7 +176,7 @@ const mushrooms = [
     description: 'Native to Europe.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Lepista_nuda_LC0372.jpg/1280px-Lepista_nuda_LC0372.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   },
 ]
@@ -188,7 +188,7 @@ const basket = [
     description: 'Native to Europe.',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Lepista_nuda_LC0372.jpg/1280px-Lepista_nuda_LC0372.jpg',
     isMagic: false,
-    isPoisionous: false,
+    isPoisonous: false,
     isDeadly: false,
   }
 ]
@@ -197,4 +197,11 @@ const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
-export default { getMushrooms, getBasket };
+const pickAMushroom = () => {
+  const randomNum = Math.floor(Math.random() * mushrooms.length);
+  const pickedMushroom = mushrooms[randomNum];
+  pickedMushroom.id = '' + basket.length++;
+  basket.push(pickedMushroom);
+};
+
+export default { getMushrooms, getBasket, pickAMushroom };

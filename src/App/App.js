@@ -13,7 +13,14 @@ class App extends React.Component {
   componentDidMount() {
     const mushrooms = mushroomData.getMushrooms();
     const basket = mushroomData.getBasket();
+
     this.setState({ mushrooms, basket });
+  }
+
+  pickAMushroom = () => {
+    mushroomData.pickAMushroom();
+    const basket = mushroomData.getBasket();
+    this.setState({ basket });
   }
 
   render() {
@@ -23,8 +30,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>BASKET</h1>
-        <Basket basket={basket}/>
-        <button className="btn btn-dark">Pick A Mushroom</button>
+        <Basket basket={basket} pickAMushroom={this.pickAMushroom}/>
         <h1>FOREST</h1>
         <Forest mushrooms={mushrooms}/>
       </div>
