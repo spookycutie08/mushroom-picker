@@ -215,6 +215,24 @@ const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
+// const checkForDuplicates = (pickedMushroom) => {
+//   if (basket.length > 0) {
+//     basket.forEach((item) => {
+//       const duplicate = item.name === pickedMushroom.name;
+//       console.log('was duplicate?', duplicate);
+//       if (duplicate === false) {
+//         pickedMushroom.quantity = 1;
+//         basket.push(pickedMushroom);
+//       } else {
+//         item.quantity += 1;
+//         console.log('quantity:', item.quantity);
+//       }
+//     });
+//   } else {
+//     basket.push(pickedMushroom);
+//   }
+// };
+
 const poisonEvent = () => {
   if (basket.length >2) {
     basket.splice(0,2);
@@ -233,7 +251,7 @@ const deadlyEvent = () => {
 const pickAMushroom = () => {
   const randomNum = Math.floor(Math.random() * mushrooms.length);
   const pickedMushroom = mushrooms[randomNum];
-  pickedMushroom.id = '' + basket.length++;
+
   // basket.push(pickedMushroom);
   if (pickedMushroom.isPoisonous) {
     poisonEvent();
@@ -241,6 +259,7 @@ const pickAMushroom = () => {
     deadlyEvent();
   } else {
     basket.push(pickedMushroom);
+    // checkForDuplicates(pickedMushroom);
   }
 };
 
