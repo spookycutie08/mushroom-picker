@@ -181,10 +181,20 @@ const mushrooms = [
   },
 ]
 
-const basket = []
+const basket = [
+  {
+    id: 'mushroom20',
+    name: 'Wood Blewit',
+    description: 'Native to Europe.',
+    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Lepista_nuda_LC0372.jpg/1280px-Lepista_nuda_LC0372.jpg',
+    isMagic: false,
+    isPoisionous: false,
+    isDeadly: false,
+  }
+]
 
 const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
-export default { getMushrooms };
+export default { getMushrooms, getBasket };
