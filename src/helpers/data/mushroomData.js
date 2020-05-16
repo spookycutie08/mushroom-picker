@@ -224,6 +224,12 @@ const poisonEvent = () => {
   }
 };
 
+const deadlyEvent = () => {
+  const baskLen = basket.length;
+  basket.splice(0, baskLen);
+  console.log('picked deadly');
+};
+
 const pickAMushroom = () => {
   const randomNum = Math.floor(Math.random() * mushrooms.length);
   const pickedMushroom = mushrooms[randomNum];
@@ -231,6 +237,8 @@ const pickAMushroom = () => {
   // basket.push(pickedMushroom);
   if (pickedMushroom.isPoisonous) {
     poisonEvent();
+  } else if (pickedMushroom.isDeadly){
+    deadlyEvent();
   } else {
     basket.push(pickedMushroom);
   }
