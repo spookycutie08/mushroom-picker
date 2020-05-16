@@ -238,7 +238,8 @@ const poisonEvent = () => {
     basket.splice(0,2);
     console.log('picked poison');
   } else if (basket.length <= 2) {
-    basket = [];
+    const baskLen = basket.length;
+    basket.splice(0, baskLen);
   }
 };
 
@@ -246,6 +247,15 @@ const deadlyEvent = () => {
   const baskLen = basket.length;
   basket.splice(0, baskLen);
   console.log('picked deadly');
+};
+
+const magicEvent = () => {
+  console.log('picked magic!');
+  mushrooms.forEach((oneMush) => {
+    if (oneMush.isDeadly === false && oneMush.isPoisonous === false && oneMush.isMagic === false){
+      basket.push(oneMush);
+    }
+  })
 };
 
 const pickAMushroom = () => {
@@ -257,6 +267,9 @@ const pickAMushroom = () => {
     poisonEvent();
   } else if (pickedMushroom.isDeadly){
     deadlyEvent();
+  } else if (pickedMushroom.isMagic) {
+    magicEvent();
+    basket.push(pickedMushroom);
   } else {
     basket.push(pickedMushroom);
     // checkForDuplicates(pickedMushroom);
