@@ -1,12 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import mushroomShapePropz from '../../helpers/propz/mushroomShape';
+
 import './Mushroom.scss';
 
 class Mushroom extends React.Component {
-  static propTypes = {
-    mushroom: mushroomShapePropz.mushroomShape,
-  }
 
   render() {
     const { mushroom } = this.props;
@@ -17,7 +13,7 @@ class Mushroom extends React.Component {
           <img className="card-img-top" src={mushroom.imgUrl} alt="Mushroom"/>
           <div className="card-body">
             <h5 className="card-title">{mushroom.name}</h5>
-            <p className="card-text">{mushroom.description}</p>
+            <p className="card-text">{mushroom.desc}</p>
           </div>
         </div>
       </div>
