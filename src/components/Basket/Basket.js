@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import mushroomShapePropz from '../../helpers/propz/mushroomShape';
 
 import './Basket.scss';
-import Mushroom from '../Mushroom/Mushroom';
+import BasketMushroom from '../Mushroom/BasketMushroom';
 
 class Basket extends React.Component {
   static propTypes = {
@@ -19,7 +19,7 @@ class Basket extends React.Component {
   render() {
     const { basket } = this.props;
     const makeBasket = basket.map((singleMushroom) => (
-      <Mushroom key={`basket-${singleMushroom.id}`} mushroom={singleMushroom}/>
+      <BasketMushroom key={`basket-${singleMushroom.id}`} mushroom={singleMushroom}/>
     ));
     return (
       <div className="Basket">

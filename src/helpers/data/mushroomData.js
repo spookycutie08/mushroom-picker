@@ -190,6 +190,7 @@ const basket = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    quantity: 3,
   },
   {
     id: '2',
@@ -199,6 +200,7 @@ const basket = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    quantity: 2,
   },
   {
     id: '3',
@@ -208,6 +210,7 @@ const basket = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    quantity: 3,
   },
 ]
 
@@ -215,45 +218,41 @@ const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
-// const checkForDuplicates = (pickedMushroom) => {
-//   if (basket.length > 0) {
-//     basket.forEach((item) => {
-//       const duplicate = item.name === pickedMushroom.name;
-//       console.log('was duplicate?', duplicate);
-//       if (duplicate === false) {
-//         pickedMushroom.quantity = 1;
-//         basket.push(pickedMushroom);
-//       } else {
-//         item.quantity += 1;
-//         console.log('quantity:', item.quantity);
-//       }
-//     });
-//   } else {
-//     basket.push(pickedMushroom);
-//   }
-// };
+const checkForDuplicates = (pickedMushroom) => {
+const duplicate = basket.find((x) => x.name === pickedMushroom.name);
+if (duplicate === undefined) {
+  pickedMushroom.quantity = 1;
+  basket.push(pickedMushroom);
+} else {
+  duplicate.quantity ++;
+}
+};
 
 const poisonEvent = () => {
-  if (basket.length >2) {
-    basket.splice(0,2);
-    console.log('picked poison');
-  } else if (basket.length <= 2) {
-    const baskLen = basket.length;
-    basket.splice(0, baskLen);
+  console.log('picked poison!')
+  const poisonedMushroomQtyOne = basket.find((x) => x.quantity === 1);
+  const poisonedMushroomQtyMore = basket.find((x) => x.quantity >= 2);
+  if (poisonedMushroomQtyOne === undefined && poisonedMushroomQtyMore === undefined) {
+    // if both are undefined, basket is empty and will do nothing
+  } else if (poisonedMushroomQtyOne === undefined){
+    // if basket not empty, but all mushrooms are multiples, will decrease qty by one
+    poisonedMushroomQtyMore.quantity -= 1;
+  } else {
+    // if basket contains a single qty mushroom, will prefer to remove that one
+    const indexToRemove = basket.indexOf(poisonedMushroomQtyOne);
+    basket.splice(indexToRemove, 1);
   }
 };
 
 const deadlyEvent = () => {
   const baskLen = basket.length;
   basket.splice(0, baskLen);
-  console.log('picked deadly');
 };
 
 const magicEvent = () => {
-  console.log('picked magic!');
   mushrooms.forEach((oneMush) => {
     if (oneMush.isDeadly === false && oneMush.isPoisonous === false && oneMush.isMagic === false){
-      basket.push(oneMush);
+      checkForDuplicates(oneMush);
     }
   })
 };
@@ -261,18 +260,21 @@ const magicEvent = () => {
 const pickAMushroom = () => {
   const randomNum = Math.floor(Math.random() * mushrooms.length);
   const pickedMushroom = mushrooms[randomNum];
-
-  // basket.push(pickedMushroom);
   if (pickedMushroom.isPoisonous) {
     poisonEvent();
+    poisonEvent();
+    window.alert('You picked a Poison Mushroom... two mushrooms in your basket have died.')
   } else if (pickedMushroom.isDeadly){
     deadlyEvent();
+    window.alert('You picked a Deadly Mushroom... all mushrooms in your basket have died.')
+
   } else if (pickedMushroom.isMagic) {
     magicEvent();
+    pickedMushroom.quantity = 1;
     basket.push(pickedMushroom);
+    window.alert('You picked a Magic Mushroom! One of each type will be added to your basket!')
   } else {
-    basket.push(pickedMushroom);
-    // checkForDuplicates(pickedMushroom);
+    checkForDuplicates(pickedMushroom);
   }
 };
 
