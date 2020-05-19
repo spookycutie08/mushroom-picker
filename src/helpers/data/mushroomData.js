@@ -181,38 +181,7 @@ const mushrooms = [
   },
 ]
 
-const basket = [
-  {
-    id: '1',
-    name: 'Wood Blewit',
-    description: 'Native to Europe.',
-    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Lepista_nuda_LC0372.jpg/1280px-Lepista_nuda_LC0372.jpg',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    quantity: 3,
-  },
-  {
-    id: '2',
-    name: 'Penny Bun',
-    description: 'Also known as porcini.',
-    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Boletus_edulis_EtgHollande_041031_091.jpg/1920px-Boletus_edulis_EtgHollande_041031_091.jpg',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    quantity: 2,
-  },
-  {
-    id: '3',
-    name: 'Golden Chantarelle',
-    description: 'Tries to look toxic, but is very edible.',
-    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Chanterelle_Cantharellus_cibarius.jpg',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    quantity: 3,
-  },
-]
+const basket = [];
 
 const getMushrooms = () => mushrooms;
 
@@ -229,7 +198,6 @@ if (duplicate === undefined) {
 };
 
 const poisonEvent = () => {
-  console.log('picked poison!')
   const poisonedMushroomQtyOne = basket.find((x) => x.quantity === 1);
   const poisonedMushroomQtyMore = basket.find((x) => x.quantity >= 2);
   if (poisonedMushroomQtyOne === undefined && poisonedMushroomQtyMore === undefined) {
@@ -246,7 +214,16 @@ const poisonEvent = () => {
 
 const deadlyEvent = () => {
   const baskLen = basket.length;
-  basket.splice(0, baskLen);
+  if (baskLen >0) {
+    window.alert('You picked a Deadly Mushroom! All the mushrooms in your basket died... :(');
+    basket.splice(0, baskLen);
+  }
+};
+
+const checkForWin = (array) => {
+  if (basket.length >= 15) {
+    window.alert('WINNER! You collected every mushroom!');
+  }
 };
 
 const magicEvent = () => {
@@ -255,6 +232,7 @@ const magicEvent = () => {
       checkForDuplicates(oneMush);
     }
   })
+  checkForWin();
 };
 
 const pickAMushroom = () => {
@@ -263,18 +241,19 @@ const pickAMushroom = () => {
   if (pickedMushroom.isPoisonous) {
     poisonEvent();
     poisonEvent();
-    window.alert('You picked a Poison Mushroom... two mushrooms in your basket have died.')
+    if (basket.length >0) {
+      window.alert('You picked a Poison Mushroom! Two mushrooms in your basket died... :(');
+    }
   } else if (pickedMushroom.isDeadly){
     deadlyEvent();
-    window.alert('You picked a Deadly Mushroom... all mushrooms in your basket have died.')
 
   } else if (pickedMushroom.isMagic) {
     magicEvent();
     pickedMushroom.quantity = 1;
     basket.push(pickedMushroom);
-    window.alert('You picked a Magic Mushroom! One of each type will be added to your basket!')
   } else {
     checkForDuplicates(pickedMushroom);
+    checkForWin();
   }
 };
 
